@@ -23,7 +23,6 @@ let bestScoreText;
 let startButton;
 let restartButton;
 let gameOver;
-
 // Константи для напрямків руху змійки
 let UP = 0;
 let DOWN = 1;
@@ -142,34 +141,22 @@ function create() {
       switch (this.heading) {
         case LEFT:
           this.headPosition.x = Phaser.Math.Wrap(
-            this.headPosition.x - 1,
-            0,
-            40
-          );
+            this.headPosition.x - 1,0,40);
           break;
 
         case RIGHT:
           this.headPosition.x = Phaser.Math.Wrap(
-            this.headPosition.x + 1,
-            0,
-            40
-          );
+            this.headPosition.x + 1,0,40);
           break;
 
         case UP:
           this.headPosition.y = Phaser.Math.Wrap(
-            this.headPosition.y - 1,
-            0,
-            30
-          );
+            this.headPosition.y - 1,0,30);
           break;
 
         case DOWN:
           this.headPosition.y = Phaser.Math.Wrap(
-            this.headPosition.y + 1,
-            0,
-            30
-          );
+            this.headPosition.y + 1,0,30);
           break;
       }
 
@@ -251,7 +238,6 @@ function create() {
     },
   });
 
-
   // Створення нового екземпляра класу Food та Snake
   food = new Food(this, 3, 4);
   snake = new Snake(this, 8, 8);
@@ -275,8 +261,8 @@ function create() {
     fontSize: 32,
     color: "#ffffff",
   });
-  // Надпис Game Over
 
+  // Надпис Game Over
   gameOver = this.add.text(150, 140, "Game Over", {
     fontFamily: "Arial",
     fontSize: 64,
@@ -287,7 +273,6 @@ function create() {
       y: 5,
     },
   });
-
   gameOver.setVisible(false);
 
   // Додайте обробник кліку для кнопки "Рестарт"
