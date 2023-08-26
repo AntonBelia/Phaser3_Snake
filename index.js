@@ -298,7 +298,7 @@ function create() {
 
 // Функція оновлення гри - виконує логіку гри на кожному кадрі
 function update(time) {
-  if (!snake.alive && !startButton.visible) {
+  if (!snake.alive) {
     gameOver.setVisible(true);
     restartButton.setVisible(true);
     return;
